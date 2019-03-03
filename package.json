@@ -12,7 +12,7 @@
     "ramda": "^0.26.1"
   },
   "scripts": {
-    "build": "node_modules/.bin/babel . -d build --ignore 'node_modules/'",
+    "build": "yarn run clean && node_modules/.bin/babel . -d build --ignore 'node_modules/'",
     "clean": "rm -rf build"
   },
   "devDependencies": {
