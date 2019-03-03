@@ -1,3 +1,5 @@
+import * as R from "ramda";
+
 class BlogEntry {
     constructor(id, title, content, author, date, tags) {
         this._id = id;
