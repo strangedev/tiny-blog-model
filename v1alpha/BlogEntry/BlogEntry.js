@@ -32,18 +32,20 @@ class BlogEntry {
         return this._tags;
     }
 
-    static unMarshal(body) {
+    static unMarshal({_id, title, content, author, date, tags}) {
         return new BlogEntry(
-            body.title,
-            body.content,
-            body.author,
-            body.date,
-            body.tags
+            _id,
+            title,
+            content,
+            author,
+            date,
+            tags
         );
     }
 
     marshal() {
         return {
+            id: this.id,
             title: this.title,
             content: this.content,
             author: this.author,
@@ -53,4 +55,6 @@ class BlogEntry {
     }
 }
 
-export default BlogEntry;
+export{
+    BlogEntry
+};

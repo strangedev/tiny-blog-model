@@ -1,10 +1,29 @@
-import v1alphaBlogEntry from "./v1alpha/BlogEntry";
+import * as v1alphaBlogEntry from "./v1alpha/BlogEntry/BlogEntry";
+import * as v1alphaBlogEntryView from "./v1alpha/BlogEntry/view";
 import {getVersion} from "./connector/db";
 
-const v1alpha = {
-    getDb: (host, port) => getVersion("v1alpha", host, port),
-    BlogEntry: v1alphaBlogEntry
-};
+const v1alpha = (host, port) => ({
+    db: getVersion("v1alpha", host, port),
+    model: {
+        BlogEntry: v1alphaBlogEntry.BlogEntry
+    },
+    view: {
+        BlogEntry: {
+            byTag: v1alphaBlogEntryView.byTag(host, port),
+            newest: v1alphaBlogEntryView.newest(host, port)
+        },
+        Tag: {
+            all: () => {}
+        }
+    },
+    mutation: {
+        BlogEntry: {
+            insert: () => {},
+            update: () => {},
+            remove: () => {}
+        }
+    }
+});
 
 export {
     v1alpha
