@@ -5,5 +5,10 @@
   "main": "noentry",
   "repository": "git@github.com:strangedev/tiny-blog-model.git",
   "author": "Noah Hummel <hummel@marvelous.systems>",
-  "license": "Apache 2.0"
+  "license": "Apache 2.0",
+  "dependencies": {
+    "fluture": "^10.3.1",
+    "mongodb": "^3.1.13",
+    "ramda": "^0.26.1"
+  }
 }
