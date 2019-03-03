@@ -2,6 +2,7 @@ import * as v1alphaBlogEntry from "./v1alpha/BlogEntry/BlogEntry";
 import * as v1alphaBlogEntryView from "./v1alpha/BlogEntry/view";
 import {getVersion} from "./connector/db";
 import * as v1alphaBlogEntryMutation from "./v1alpha/BlogEntry/mutation";
+import * as v1alphaTagView from "./v1alpha/Tag/view";
 
 const v1alpha = {
     model: {
@@ -22,7 +23,7 @@ const v1alpha = {
         },
         Tag: {
             view: {
-                all: () => {}
+                all: v1alphaTagView.all(host, port)
             }
         }
     })
