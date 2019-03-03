@@ -1,6 +1,7 @@
 import * as v1alphaBlogEntry from "./v1alpha/BlogEntry/BlogEntry";
 import * as v1alphaBlogEntryView from "./v1alpha/BlogEntry/view";
 import {getVersion} from "./connector/db";
+import * as v1alphaBlogEntryMutation from "./v1alpha/BlogEntry/mutation";
 
 const v1alpha = {
     model: {
@@ -14,9 +15,9 @@ const v1alpha = {
                 newest: v1alphaBlogEntryView.newest(host, port)
             },
             mutation: {
-                insert: () => {},
+                insert: v1alphaBlogEntryMutation.insert(host, port),
                 update: () => {},
-                remove: () => {}
+                remove: v1alphaBlogEntryMutation.remove(host, port)
             }
         },
         Tag: {

@@ -51,15 +51,18 @@ class BlogEntry {
         );
     }
 
-    marshal() {
-        return {
-            id: this.id,
+    marshal(noId=false) {
+        let body = {
             title: this.title,
             content: this.content,
             author: this.author,
             date: this.date,
             tags: this.tags
+        };
+        if (!noId) {
+            body.id = this._id;
         }
+        return body;
     }
 }
 
