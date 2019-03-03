@@ -1,0 +1,9 @@
+{
+  "name": "tiny-blog-model",
+  "version": "0.1.0",
+  "description": "Data model and database connector for tiny-blog",
+  "main": "noentry",
+  "repository": "git@github.com:strangedev/tiny-blog-model.git",
+  "author": "Noah Hummel <hummel@marvelous.systems>",
+  "license": "Apache 2.0"
+}
