@@ -2,28 +2,30 @@ import * as v1alphaBlogEntry from "./v1alpha/BlogEntry/BlogEntry";
 import * as v1alphaBlogEntryView from "./v1alpha/BlogEntry/view";
 import {getVersion} from "./connector/db";
 
-const v1alpha = (host, port) => ({
-    db: getVersion("v1alpha", host, port),
+const v1alpha = {
     model: {
         BlogEntry: v1alphaBlogEntry.BlogEntry
     },
-    view: {
+    store: (host, port) => ({
+        getDb: () => getVersion("v1alpha", host, port),
         BlogEntry: {
-            byTag: v1alphaBlogEntryView.byTag(host, port),
-            newest: v1alphaBlogEntryView.newest(host, port)
+            view: {
+                byTag: v1alphaBlogEntryView.byTag(host, port),
+                newest: v1alphaBlogEntryView.newest(host, port)
+            },
+            mutation: {
+                insert: () => {},
+                update: () => {},
+                remove: () => {}
+            }
         },
         Tag: {
-            all: () => {}
+            view: {
+                all: () => {}
+            }
         }
-    },
-    mutation: {
-        BlogEntry: {
-            insert: () => {},
-            update: () => {},
-            remove: () => {}
-        }
-    }
-});
+    })
+};
 
 export {
     v1alpha
