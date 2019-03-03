@@ -21,6 +21,7 @@ Models follow the tiny-blog-api spec: https://github.com/strangedev/tiny-blog-ap
  - versionName
     - model
     - store
+        - getDb
         - ResourceName
             - view
             - mutation
@@ -31,6 +32,7 @@ e.g.
     - model
         - BlogEntry
     - store
+        - getDb
         - BlogEntry
             - view
                 - newest
@@ -56,10 +58,6 @@ let cancel = v1Store.BlogEntry.view.newest().fork(
         console.log(result);
     }
 );
-
-cancel = v1Store.getDb().fork(
-    
-)
 
 ```
 
