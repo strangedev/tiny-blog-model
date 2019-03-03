@@ -2,7 +2,7 @@ import * as R from "ramda";
 import * as Future from "fluture";
 import * as MongoDb from "mongodb";
 
-function getVersion(version, { host="mongodb", port=27017 }) {
+function getVersion(version, host, port) {
     return Future.Future((reject, resolve) => {
         const client = new MongoDb.MongoClient(`mongodb://${host}:${port}/${version}`);
         client.connect(err => {

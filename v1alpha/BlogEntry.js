@@ -1,10 +1,15 @@
 class BlogEntry {
-    constructor(title, content, author, date, tags) {
+    constructor(id, title, content, author, date, tags) {
+        this._id = id;
         this._title = title;
         this._content = content;
         this._author = author;
         this._date = date;
         this._tags = tags;
+    }
+
+    get id() {
+        return this._id;
     }
 
     get title() {
