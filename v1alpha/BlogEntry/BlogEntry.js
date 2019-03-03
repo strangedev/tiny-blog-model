@@ -32,9 +32,14 @@ class BlogEntry {
         return this._tags;
     }
 
-    static unMarshal({_id, title, content, author, date, tags}) {
+    static unMarshal({title, content, author, date, tags, ...rest}) {
+        if (R.isNil(rest.id)) {
+            let id = rest._id;
+        } else {
+            let id = rest.id;
+        }
         return new BlogEntry(
-            _id,
+            id,
             title,
             content,
             author,
