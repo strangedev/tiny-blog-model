@@ -7,9 +7,6 @@
   "author": "Noah Hummel <hummel@marvelous.systems>",
   "license": "Apache 2.0",
   "dependencies": {
-    "@babel/cli": "^7.2.3",
-    "@babel/core": "^7.3.4",
-    "@babel/preset-env": "^7.3.4",
     "fluture": "^10.3.1",
     "mongodb": "^3.1.13",
     "ramda": "^0.26.1"
@@ -17,5 +14,10 @@
   "scripts": {
     "build": "node_modules/.bin/babel . -d build --ignore 'node_modules/'",
     "clean": "rm -rf build"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.2.3",
+    "@babel/core": "^7.3.4",
+    "@babel/preset-env": "^7.3.4"
   }
 }
