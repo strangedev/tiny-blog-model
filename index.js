@@ -1,9 +1,5 @@
-import * as v1alphaBlogEntry from "./v1alpha/BlogEntry/BlogEntry";
-
-const v1alpha = {
-    BlogEntry: v1alphaBlogEntry.BlogEntry
-};
+import {BlogEntry} from "./src/BlogEntry/BlogEntry";
 
 export {
-    v1alpha
+    BlogEntry
 }
