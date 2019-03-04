@@ -15,8 +15,8 @@ Models follow the tiny-blog-api spec: https://github.com/strangedev/tiny-blog-ap
 ## Usage
 
 ```javascript
-import {v1alpha} from "tiny-blog-model";
-let blogEntry = v1alpha.BlogEntry.unMarshal(JSON.parse(...));
+import {BlogEntry} from "tiny-blog-model";
+let blogEntry = BlogEntry.unMarshal(JSON.parse(...));
 ```
 
 ## Development
