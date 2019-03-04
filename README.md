@@ -2,6 +2,8 @@
 
 Data model for tiny-blog.
 
+[![codecov](https://codecov.io/gh/strangedev/tiny-blog-model/branch/master/graph/badge.svg)](https://codecov.io/gh/strangedev/tiny-blog-model)
+
 Models follow the tiny-blog-api spec: https://github.com/strangedev/tiny-blog-api/tree/master/spec
 
 ### Related repos
